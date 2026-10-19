@@ -68,13 +68,13 @@ The tenant shows four enabled user-created policies: baseline MFA, privileged ph
 
 ### 5. Successful Azure sign-in
 
-![Redacted Microsoft Entra interactive Azure Portal sign-in details showing Success](screenshots/05-azure-sign-in-success.png)
+![Microsoft Entra interactive Azure Portal sign-in details showing Success](screenshots/05-azure-sign-in-success-original%20(1).png)
 
 The inspected Azure Portal sign-in is marked **Success** with an MFA authentication requirement. Its Basic info states **“MFA requirement satisfied by claim in the token.”** This statement alone does not identify the underlying authentication method for the event.
 
 ### 6. Both Conditional Access MFA policies succeeded
 
-![Redacted Conditional Access tab showing both the baseline and privileged phishing-resistant MFA policies succeeded](screenshots/06-phishing-resistant-mfa-policy-success.png)
+![Conditional Access tab showing both the baseline and privileged phishing-resistant MFA policies succeeded](screenshots/06-phishing-resistant-mfa-policy-success-original.png)
 
 The selected sign-in shows **Success** for both the baseline MFA policy and **CA - Privileged Admins - Phishing Resistant MFA**. The sign-in risk and user risk policies show **Not applied** for this event.
 
@@ -97,7 +97,7 @@ The selected sign-in shows **Success** for both the baseline MFA policy and **CA
 - Test Conditional Access with **What If**, sign-in logs, and a controlled rollout; report-only is a safer default for a general production rollout.
 - Use device-bound passkeys and consider attestation / allowed authenticator restrictions where hardware provenance requirements apply.
 - Review sign-in **Authentication details** before asserting the exact method used.
-- Never publish passwords, security-key PINs, secrets, or unredacted operational identifiers.
+- Never publish passwords, security-key PINs, or secrets. Screenshots 5 and 6 include unredacted account and event identifiers; consider redacting them before public sharing.
 
 ## Repository layout
 
@@ -109,12 +109,12 @@ entra-phishing-resistant-mfa-yubikey-lab/
     ├── 02-entra-fido2-sign-in-prompt.png
     ├── 03-yubikey-security-key-pin.png
     ├── 04-conditional-access-policy-overview.png
-    ├── 05-azure-sign-in-success.png
-    └── 06-phishing-resistant-mfa-policy-success.png
+    ├── 05-azure-sign-in-success-original%20(1).png
+    └── 06-phishing-resistant-mfa-policy-success-original.png
 ```
 
 **Note:** The screenshots folder is populated separately. Until all six PNGs are uploaded with the exact paths above, the gallery will display broken image placeholders.
 
 ## Outcome
 
-This lab demonstrates real-world IAM administration: **hardware-backed passkey enrollment, Conditional Access scope design, privileged authentication-strength enforcement, emergency-access planning, and audit-log validation**. The public evidence screenshots have opaque redactions over account identifiers and operational metadata.
+This lab demonstrates real-world IAM administration: **hardware-backed passkey enrollment, Conditional Access scope design, privileged authentication-strength enforcement, emergency-access planning, and audit-log validation**. Screenshots 1–4 contain redactions; screenshots 5–6 are original, unredacted sign-in evidence.
